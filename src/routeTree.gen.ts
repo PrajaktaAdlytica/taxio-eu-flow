@@ -13,6 +13,9 @@ import { Route as SigninRouteImport } from './routes/signin'
 import { Route as RequestDemoRouteImport } from './routes/request-demo'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsRulesRouteImport } from './routes/products.rules'
+import { Route as ProductsEvidenceRouteImport } from './routes/products.evidence'
+import { Route as ProductsCheckRouteImport } from './routes/products.check'
 
 const SigninRoute = SigninRouteImport.update({
   id: '/signin',
@@ -34,18 +37,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsRulesRoute = ProductsRulesRouteImport.update({
+  id: '/products/rules',
+  path: '/products/rules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsEvidenceRoute = ProductsEvidenceRouteImport.update({
+  id: '/products/evidence',
+  path: '/products/evidence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsCheckRoute = ProductsCheckRouteImport.update({
+  id: '/products/check',
+  path: '/products/check',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/request-demo': typeof RequestDemoRoute
   '/signin': typeof SigninRoute
+  '/products/check': typeof ProductsCheckRoute
+  '/products/evidence': typeof ProductsEvidenceRoute
+  '/products/rules': typeof ProductsRulesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/request-demo': typeof RequestDemoRoute
   '/signin': typeof SigninRoute
+  '/products/check': typeof ProductsCheckRoute
+  '/products/evidence': typeof ProductsEvidenceRoute
+  '/products/rules': typeof ProductsRulesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +77,38 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/request-demo': typeof RequestDemoRoute
   '/signin': typeof SigninRoute
+  '/products/check': typeof ProductsCheckRoute
+  '/products/evidence': typeof ProductsEvidenceRoute
+  '/products/rules': typeof ProductsRulesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/request-demo' | '/signin'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/request-demo'
+    | '/signin'
+    | '/products/check'
+    | '/products/evidence'
+    | '/products/rules'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/request-demo' | '/signin'
-  id: '__root__' | '/' | '/about' | '/request-demo' | '/signin'
+  to:
+    | '/'
+    | '/about'
+    | '/request-demo'
+    | '/signin'
+    | '/products/check'
+    | '/products/evidence'
+    | '/products/rules'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/request-demo'
+    | '/signin'
+    | '/products/check'
+    | '/products/evidence'
+    | '/products/rules'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +116,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   RequestDemoRoute: typeof RequestDemoRoute
   SigninRoute: typeof SigninRoute
+  ProductsCheckRoute: typeof ProductsCheckRoute
+  ProductsEvidenceRoute: typeof ProductsEvidenceRoute
+  ProductsRulesRoute: typeof ProductsRulesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +151,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/rules': {
+      id: '/products/rules'
+      path: '/products/rules'
+      fullPath: '/products/rules'
+      preLoaderRoute: typeof ProductsRulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/evidence': {
+      id: '/products/evidence'
+      path: '/products/evidence'
+      fullPath: '/products/evidence'
+      preLoaderRoute: typeof ProductsEvidenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/check': {
+      id: '/products/check'
+      path: '/products/check'
+      fullPath: '/products/check'
+      preLoaderRoute: typeof ProductsCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +180,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   RequestDemoRoute: RequestDemoRoute,
   SigninRoute: SigninRoute,
+  ProductsCheckRoute: ProductsCheckRoute,
+  ProductsEvidenceRoute: ProductsEvidenceRoute,
+  ProductsRulesRoute: ProductsRulesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
