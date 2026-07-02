@@ -62,6 +62,9 @@
   --accent: #198754;               /* Primary Green */
   --accent-foreground: #FFFFFF;
   --accent-soft: #EAF7F1;          /* Light Green */
+  --accent-lavender: #F3EEFF;      /* Light Lavender */
+  --accent-amber: #FFF7E8;         /* Light Amber */
+  --accent-blue: #E8F1FF;          /* Light Blue */
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
   --success: #16A34A;
