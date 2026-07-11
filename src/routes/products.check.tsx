@@ -6,7 +6,7 @@ import { ArrowRight, Check, ShieldCheck } from "lucide-react";
 import { CTA } from "@/components/CTA";
 
 export const Route = createFileRoute("/products/check")({
-  head: () => ({ meta: [{ title: "Taxio Check — Validate VAT numbers and invoices" }] }),
+  head: () => ({ meta: [{ title: "Taxexa Check — Validate VAT numbers and invoices" }] }),
   component: Page,
 });
 
@@ -22,7 +22,7 @@ function Page() {
     <Shell>
       <section className="mx-auto max-w-7xl px-6 pt-14 md:pt-20 pb-16">
         <div className="max-w-3xl">
-          <Eyebrow>Taxio Check</Eyebrow>
+          <Eyebrow>Taxexa Check</Eyebrow>
           <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
             Validate every invoice <span className="font-editorial text-accent">before it moves.</span>
           </h1>

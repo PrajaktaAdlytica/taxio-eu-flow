@@ -13,13 +13,13 @@ export function CTA() {
               Ready to simplify VAT compliance?
             </h3>
             <p className="mt-4 text-[15px] text-muted-foreground max-w-md">
-              See how Taxio helps finance teams automate validation, evidence collection and European VAT compliance.
+              See how Taxexa helps finance teams automate validation, evidence collection and European VAT compliance.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink to="/request-demo" variant="primary" size="lg">
                 Request Demo <ArrowRight className="h-4 w-4" />
               </ButtonLink>
-              <ButtonLink href="mailto:hello@taxio.ai" variant="outline" size="lg">
+              <ButtonLink href="mailto:hello@taxexa.com" variant="outline" size="lg">
                 Talk to Sales
               </ButtonLink>
             </div>

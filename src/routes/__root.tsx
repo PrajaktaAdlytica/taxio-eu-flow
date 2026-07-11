@@ -62,8 +62,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const TITLE = "Taxio — Automate VAT compliance across Europe.";
-const DESC = "Taxio helps EU SMEs, accountants, finance teams and cross-border sellers automate VAT compliance, e-invoicing and evidence management in one operational workspace.";
+const TITLE = "Taxexa — Automate VAT compliance across Europe.";
+const DESC = "Taxexa helps EU SMEs, accountants, finance teams and cross-border sellers automate VAT compliance, e-invoicing and evidence management in one operational workspace.";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -72,26 +72,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: TITLE },
       { name: "description", content: DESC },
-      { name: "author", content: "Taxio" },
+      { name: "author", content: "Taxexa" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Taxio" },
+      { property: "og:site_name", content: "Taxexa" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { title: "Taxio — Automate VAT compliance across Europe." },
-      { property: "og:title", content: "Taxio — Automate VAT compliance across Europe." },
-      { name: "twitter:title", content: "Taxio — Automate VAT compliance across Europe." },
+      { title: "Taxexa — Automate VAT compliance across Europe." },
+      { property: "og:title", content: "Taxexa — Automate VAT compliance across Europe." },
+      { name: "twitter:title", content: "Taxexa — Automate VAT compliance across Europe." },
       { name: "description", content: "Validate invoices, apply country-specific VAT rules and automate evidence collection from one operational workspace." },
       { property: "og:description", content: "Validate invoices, apply country-specific VAT rules and automate evidence collection from one operational workspace." },
       { name: "twitter:description", content: "Validate invoices, apply country-specific VAT rules and automate evidence collection from one operational workspace." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e440c2da-dcc5-4e84-8c66-3319c8830d5a/id-preview-665c1479--b9ad7555-e9d5-49b9-9092-6ab7d0aab3a9.lovable.app-1782996964422.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e440c2da-dcc5-4e84-8c66-3319c8830d5a/id-preview-665c1479--b9ad7555-e9d5-49b9-9092-6ab7d0aab3a9.lovable.app-1782996964422.png" },
+      { property: "og:image", content: "https://taxexa.com/taxexa-favicon.svg?v=taxexa" },
+      { name: "twitter:image", content: "https://taxexa.com/taxexa-favicon.svg?v=taxexa" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/taxexa-favicon.svg?v=taxexa", type: "image/svg+xml" },
+      { rel: "shortcut icon", href: "/favicon.ico?v=taxexa", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

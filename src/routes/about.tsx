@@ -6,8 +6,8 @@ import { CTA } from "@/components/CTA";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Taxio" },
-      { name: "description", content: "Taxio builds premium European infrastructure for VAT compliance, e-invoicing and evidence management." },
+      { title: "About — Taxexa" },
+      { name: "description", content: "Taxexa builds premium European infrastructure for VAT compliance, e-invoicing and evidence management." },
     ],
   }),
   component: About,
@@ -18,12 +18,12 @@ function About() {
     <Shell>
       <section className="mx-auto max-w-7xl px-6 pt-14 md:pt-20 pb-16">
         <div className="max-w-3xl">
-          <Eyebrow>About Taxio</Eyebrow>
+          <Eyebrow>About Taxexa</Eyebrow>
           <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
             Building European infrastructure for <span className="font-editorial text-accent">tax compliance.</span>
           </h1>
           <p className="mt-6 text-[17px] text-muted-foreground leading-relaxed">
-            Taxio is a European B2B SaaS platform helping SMEs, accountants, finance teams and cross-border sellers automate VAT compliance, e-invoicing and evidence management — from one operational workspace.
+            Taxexa is a European B2B SaaS platform helping SMEs, accountants, finance teams and cross-border sellers automate VAT compliance, e-invoicing and evidence management — from one operational workspace.
           </p>
         </div>
       </section>
@@ -44,9 +44,9 @@ function About() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16">
-        <SectionHeader eyebrow="Contact" title="Come and say hello." description="Taxio Sp. z o.o. · Rondo Daszyńskiego 2B · 00-843 Warsaw · Poland" />
+        <SectionHeader eyebrow="Contact" title="Come and say hello." description="Taxexa Sp. z o.o. · Rondo Daszyńskiego 2B · 00-843 Warsaw · Poland" />
         <div className="mt-8 text-center text-sm text-muted-foreground">
-          <a href="mailto:hello@taxio.ai" className="text-accent hover:text-accent/80 font-medium">hello@taxio.ai</a>
+          <a href="mailto:hello@taxexa.com" className="text-accent hover:text-accent/80 font-medium">hello@taxexa.com</a>
           {" · "}
           <a href="tel:+48223078420" className="text-accent hover:text-accent/80 font-medium">+48 22 307 84 20</a>
         </div>

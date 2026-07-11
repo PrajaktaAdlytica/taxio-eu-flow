@@ -1,0 +1,21 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Taxexa">
+  <defs>
+    <linearGradient id="taxexaIconPanel" x1="32" y1="22" x2="224" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B3B2E"/>
+      <stop offset="1" stop-color="#071D18"/>
+    </linearGradient>
+    <linearGradient id="taxexaIconRail" x1="66" y1="66" x2="208" y2="208" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#21C98A"/>
+      <stop offset="1" stop-color="#0D8B63"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="62" fill="url(#taxexaIconPanel)"/>
+  <path d="M93 54H160L194 88V202H93V54Z" fill="#F7FFF9"/>
+  <path d="M160 54V88H194" fill="#DFF7EC"/>
+  <path d="M70 81V184C70 197.25 80.75 208 94 208H181" stroke="url(#taxexaIconRail)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M116 118H166" stroke="#0B3B2E" stroke-width="12" stroke-linecap="round"/>
+  <path d="M116 150H153" stroke="#0B3B2E" stroke-width="12" stroke-linecap="round" opacity="0.78"/>
+  <path d="M116 182H171" stroke="#0B3B2E" stroke-width="12" stroke-linecap="round" opacity="0.55"/>
+  <rect x="160" y="144" width="38" height="38" rx="11" fill="#E5A638"/>
+  <path d="M179 132V194" stroke="#F7FFF9" stroke-width="10" stroke-linecap="round"/>
+</svg>

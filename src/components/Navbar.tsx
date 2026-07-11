@@ -6,9 +6,9 @@ import { ButtonLink } from "./Button";
 import { cn } from "@/lib/utils";
 
 const products = [
-  { to: "/products/check", name: "Taxio Check", desc: "Automated VAT & invoice validation" },
-  { to: "/products/rules", name: "Taxio Rules", desc: "Country-specific VAT rule engine" },
-  { to: "/products/evidence", name: "Taxio Evidence", desc: "Compliance evidence collection" },
+  { to: "/products/check", name: "Taxexa Check", desc: "Automated VAT & invoice validation" },
+  { to: "/products/rules", name: "Taxexa Rules", desc: "Country-specific VAT rule engine" },
+  { to: "/products/evidence", name: "Taxexa Evidence", desc: "Compliance evidence collection" },
 ];
 
 export function Navbar() {

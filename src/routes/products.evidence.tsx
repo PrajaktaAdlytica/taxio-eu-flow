@@ -6,7 +6,7 @@ import { ArrowRight, Check, FolderCheck } from "lucide-react";
 import { CTA } from "@/components/CTA";
 
 export const Route = createFileRoute("/products/evidence")({
-  head: () => ({ meta: [{ title: "Taxio Evidence — Compliance evidence, automated" }] }),
+  head: () => ({ meta: [{ title: "Taxexa Evidence — Compliance evidence, automated" }] }),
   component: Page,
 });
 
@@ -22,7 +22,7 @@ function Page() {
     <Shell>
       <section className="mx-auto max-w-7xl px-6 pt-14 md:pt-20 pb-16">
         <div className="max-w-3xl">
-          <Eyebrow>Taxio Evidence</Eyebrow>
+          <Eyebrow>Taxexa Evidence</Eyebrow>
           <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
             Every document, connected to <span className="font-editorial text-accent">every transaction.</span>
           </h1>

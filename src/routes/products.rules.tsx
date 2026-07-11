@@ -6,7 +6,7 @@ import { ArrowRight, Check, Scale } from "lucide-react";
 import { CTA } from "@/components/CTA";
 
 export const Route = createFileRoute("/products/rules")({
-  head: () => ({ meta: [{ title: "Taxio Rules — Country-specific VAT automation" }] }),
+  head: () => ({ meta: [{ title: "Taxexa Rules — Country-specific VAT automation" }] }),
   component: Page,
 });
 
@@ -14,7 +14,7 @@ const features = [
   { t: "27 EU countries", d: "Live coverage of every EU member state, updated continuously by our tax content team." },
   { t: "Reverse charge & OSS/IOSS", d: "Cross-border scenarios handled automatically, no manual VAT logic to maintain." },
   { t: "Deterministic engine", d: "Every rule decision explainable and auditable — no black boxes." },
-  { t: "API-first", d: "Plug Taxio Rules into your ERP, billing or e-commerce stack in minutes." },
+  { t: "API-first", d: "Plug Taxexa Rules into your ERP, billing or e-commerce stack in minutes." },
 ];
 
 function Page() {
@@ -22,7 +22,7 @@ function Page() {
     <Shell>
       <section className="mx-auto max-w-7xl px-6 pt-14 md:pt-20 pb-16">
         <div className="max-w-3xl">
-          <Eyebrow>Taxio Rules</Eyebrow>
+          <Eyebrow>Taxexa Rules</Eyebrow>
           <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
             Country-specific VAT logic, <span className="font-editorial text-accent">automated.</span>
           </h1>

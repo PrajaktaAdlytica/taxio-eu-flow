@@ -18,7 +18,7 @@ import { CTA } from "@/components/CTA";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Taxio — Automate VAT compliance across Europe." },
+      { title: "Taxexa — Automate VAT compliance across Europe." },
       { name: "description", content: "Validate invoices, apply country-specific VAT rules and automate evidence collection from one operational workspace." },
     ],
   }),
@@ -77,7 +77,7 @@ function Home() {
         <SectionHeader
           eyebrow="The Solution"
           title={<>One workflow for every <span className="font-editorial text-accent">VAT decision.</span></>}
-          description="Taxio connects invoice validation, VAT rules and supporting evidence into one operational workflow."
+          description="Taxexa connects invoice validation, VAT rules and supporting evidence into one operational workflow."
         />
         <div className="mt-14"><Reveal><SolutionFlow /></Reveal></div>
       </section>
@@ -104,7 +104,7 @@ function Home() {
 
       {/* BENEFITS */}
       <section className="mx-auto max-w-7xl px-6 py-24">
-        <SectionHeader eyebrow="Why Taxio" title="Real outcomes for European finance teams." />
+        <SectionHeader eyebrow="Why Taxexa" title="Real outcomes for European finance teams." />
         <div className="mt-14"><BenefitStats /></div>
       </section>
 
@@ -123,8 +123,8 @@ function Home() {
         <SectionHeader eyebrow="Customers" title="Trusted by finance leaders." />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {[
-            { q: "Taxio reduced our VAT review time from days to minutes while keeping every transaction fully documented.", n: "Anna Kowalska", r: "Finance Director", c: "Warsaw Commerce Group" },
-            { q: "Cross-border invoicing became significantly easier once our compliance workflow moved into Taxio.", n: "Piotr Nowak", r: "Head of Finance", c: "Baltic Retail Solutions" },
+            { q: "Taxexa reduced our VAT review time from days to minutes while keeping every transaction fully documented.", n: "Anna Kowalska", r: "Finance Director", c: "Warsaw Commerce Group" },
+            { q: "Cross-border invoicing became significantly easier once our compliance workflow moved into Taxexa.", n: "Piotr Nowak", r: "Head of Finance", c: "Baltic Retail Solutions" },
             { q: "We finally have one place for invoices, VAT validation and supporting evidence.", n: "Katarzyna Wiśniewska", r: "Chief Accountant", c: "Nova Logistics Polska" },
           ].map((t) => (
             <div key={t.n} className="surface-card card-hover p-7 flex flex-col">
@@ -144,11 +144,11 @@ function Home() {
         <SectionHeader eyebrow="FAQ" title="Frequently asked questions." />
         <div className="mt-12">
           <FAQ items={[
-            { q: "How does Taxio validate VAT numbers?", a: "Taxio validates VAT identifiers against official European sources (including VIES) in real time, checks format per country and cross-checks the name and address on the invoice." },
+            { q: "How does Taxexa validate VAT numbers?", a: "Taxexa validates VAT identifiers against official European sources (including VIES) in real time, checks format per country and cross-checks the name and address on the invoice." },
             { q: "How often are VAT rules updated?", a: "Our tax content team monitors regulatory changes across all 27 EU member states and pushes updates continuously, so your workflows always reflect the current rules." },
-            { q: "Does Taxio support cross-border invoicing?", a: "Yes. Taxio handles intra-community supplies, reverse charge scenarios, OSS/IOSS and country-specific e-invoicing formats such as Peppol." },
+            { q: "Does Taxexa support cross-border invoicing?", a: "Yes. Taxexa handles intra-community supplies, reverse charge scenarios, OSS/IOSS and country-specific e-invoicing formats such as Peppol." },
             { q: "Can evidence be exported?", a: "Every invoice, receipt, contract and supporting document can be exported as a compliance-ready package for auditors, tax authorities or internal review." },
-            { q: "Is Taxio suitable for accountants?", a: "Yes. Accountancy firms use Taxio to manage multiple client workspaces, standardise VAT reviews and produce fully documented filings." },
+            { q: "Is Taxexa suitable for accountants?", a: "Yes. Accountancy firms use Taxexa to manage multiple client workspaces, standardise VAT reviews and produce fully documented filings." },
           ]} />
         </div>
       </section>

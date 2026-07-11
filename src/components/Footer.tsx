@@ -6,9 +6,9 @@ const cols = [
   {
     title: "Products",
     links: [
-      { label: "Taxio Check", to: "/products/check" },
-      { label: "Taxio Rules", to: "/products/rules" },
-      { label: "Taxio Evidence", to: "/products/evidence" },
+      { label: "Taxexa Check", to: "/products/check" },
+      { label: "Taxexa Rules", to: "/products/rules" },
+      { label: "Taxexa Evidence", to: "/products/evidence" },
     ],
   },
   {
@@ -24,7 +24,7 @@ const cols = [
     links: [
       { label: "Privacy Policy", href: "#" },
       { label: "Terms", href: "#" },
-      { label: "Contact", href: "mailto:hello@taxio.ai" },
+      { label: "Contact", href: "mailto:hello@taxexa.com" },
     ],
   },
 ];
@@ -43,14 +43,14 @@ export function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="h-3.5 w-3.5 mt-0.5 text-accent" />
                 <div>
-                  Taxio Sp. z o.o.<br />
+                  Taxexa Sp. z o.o.<br />
                   Rondo Daszyńskiego 2B<br />
                   00-843 Warsaw, Poland
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-3.5 w-3.5 text-accent" />
-                <a href="mailto:hello@taxio.ai" className="hover:text-accent transition-colors">hello@taxio.ai</a>
+                <a href="mailto:hello@taxexa.com" className="hover:text-accent transition-colors">hello@taxexa.com</a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-3.5 w-3.5 text-accent" />
@@ -82,7 +82,7 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-14 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <div>© 2026 Taxio Sp. z o.o. — taxio.ai</div>
+          <div>© 2026 Taxexa Sp. z o.o. — taxexa.com</div>
           <div>Warsaw · Amsterdam · Berlin</div>
         </div>
       </div>

@@ -8,8 +8,8 @@ import { motion } from "motion/react";
 export const Route = createFileRoute("/request-demo")({
   head: () => ({
     meta: [
-      { title: "Request a Demo — Taxio" },
-      { name: "description", content: "See how Taxio automates European VAT compliance, e-invoicing and evidence management." },
+      { title: "Request a Demo — Taxexa" },
+      { name: "description", content: "See how Taxexa automates European VAT compliance, e-invoicing and evidence management." },
     ],
   }),
   component: RequestDemo,
@@ -37,7 +37,7 @@ function RequestDemo() {
         </Link>
         <div className="relative mt-auto max-w-md">
           <h2 className="text-4xl font-semibold tracking-tight text-balance leading-[1.05]">
-            See <span className="font-editorial text-accent">Taxio</span> in action.
+            See <span className="font-editorial text-accent">Taxexa</span> in action.
           </h2>
           <p className="mt-4 text-sm text-primary-foreground/70">
             Walk through invoice validation, country rules and evidence — mapped to how your teams work today.
@@ -98,7 +98,7 @@ function RequestDemo() {
                 Request Demo <ArrowRight className="h-4 w-4" />
               </Button>
               <p className="text-[11px] text-muted-foreground text-center">
-                By submitting, you agree to Taxio processing your data as described in our Privacy Policy.
+                By submitting, you agree to Taxexa processing your data as described in our Privacy Policy.
               </p>
             </form>
           )}

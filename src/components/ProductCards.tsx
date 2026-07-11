@@ -17,7 +17,7 @@ export function ProductCards() {
       <ProductCard
         tone="green"
         eyebrow="Check"
-        title="Taxio Check"
+        title="Taxexa Check"
         to="/products/check"
         icon={<ShieldCheck className="h-5 w-5" />}
         desc="Automatically validate VAT numbers, invoices and transaction data before filing."
@@ -26,7 +26,7 @@ export function ProductCards() {
       <ProductCard
         tone="lavender"
         eyebrow="Rules"
-        title="Taxio Rules"
+        title="Taxexa Rules"
         to="/products/rules"
         icon={<Globe2 className="h-5 w-5" />}
         desc="Apply country-specific VAT regulations automatically across every transaction."
@@ -35,7 +35,7 @@ export function ProductCards() {
       <ProductCard
         tone="amber"
         eyebrow="Evidence"
-        title="Taxio Evidence"
+        title="Taxexa Evidence"
         to="/products/evidence"
         icon={<FolderCheck className="h-5 w-5" />}
         desc="Automatically collect, organise and export compliance evidence for every transaction."
