@@ -9,22 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SigninRouteImport } from './routes/signin'
-import { Route as RequestDemoRouteImport } from './routes/request-demo'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProductsRulesRouteImport } from './routes/products.rules'
-import { Route as ProductsEvidenceRouteImport } from './routes/products.evidence'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as RequestDemoRouteImport } from './routes/request-demo'
+import { Route as SigninRouteImport } from './routes/signin'
 import { Route as ProductsCheckRouteImport } from './routes/products.check'
+import { Route as ProductsEvidenceRouteImport } from './routes/products.evidence'
+import { Route as ProductsRulesRouteImport } from './routes/products.rules'
 
-const SigninRoute = SigninRouteImport.update({
-  id: '/signin',
-  path: '/signin',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RequestDemoRoute = RequestDemoRouteImport.update({
-  id: '/request-demo',
-  path: '/request-demo',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,14 +27,19 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const RequestDemoRoute = RequestDemoRouteImport.update({
+  id: '/request-demo',
+  path: '/request-demo',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProductsRulesRoute = ProductsRulesRouteImport.update({
-  id: '/products/rules',
-  path: '/products/rules',
+const SigninRoute = SigninRouteImport.update({
+  id: '/signin',
+  path: '/signin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsCheckRoute = ProductsCheckRouteImport.update({
+  id: '/products/check',
+  path: '/products/check',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductsEvidenceRoute = ProductsEvidenceRouteImport.update({
@@ -47,9 +47,9 @@ const ProductsEvidenceRoute = ProductsEvidenceRouteImport.update({
   path: '/products/evidence',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProductsCheckRoute = ProductsCheckRouteImport.update({
-  id: '/products/check',
-  path: '/products/check',
+const ProductsRulesRoute = ProductsRulesRouteImport.update({
+  id: '/products/rules',
+  path: '/products/rules',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -123,18 +123,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/signin': {
-      id: '/signin'
-      path: '/signin'
-      fullPath: '/signin'
-      preLoaderRoute: typeof SigninRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/request-demo': {
-      id: '/request-demo'
-      path: '/request-demo'
-      fullPath: '/request-demo'
-      preLoaderRoute: typeof RequestDemoRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -144,18 +137,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/request-demo': {
+      id: '/request-demo'
+      path: '/request-demo'
+      fullPath: '/request-demo'
+      preLoaderRoute: typeof RequestDemoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/products/rules': {
-      id: '/products/rules'
-      path: '/products/rules'
-      fullPath: '/products/rules'
-      preLoaderRoute: typeof ProductsRulesRouteImport
+    '/signin': {
+      id: '/signin'
+      path: '/signin'
+      fullPath: '/signin'
+      preLoaderRoute: typeof SigninRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/check': {
+      id: '/products/check'
+      path: '/products/check'
+      fullPath: '/products/check'
+      preLoaderRoute: typeof ProductsCheckRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products/evidence': {
@@ -165,11 +165,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsEvidenceRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/products/check': {
-      id: '/products/check'
-      path: '/products/check'
-      fullPath: '/products/check'
-      preLoaderRoute: typeof ProductsCheckRouteImport
+    '/products/rules': {
+      id: '/products/rules'
+      path: '/products/rules'
+      fullPath: '/products/rules'
+      preLoaderRoute: typeof ProductsRulesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -187,3 +187,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

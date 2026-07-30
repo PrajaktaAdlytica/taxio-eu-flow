@@ -6,39 +6,39 @@ import { Link } from "@tanstack/react-router";
 type Tone = "green" | "lavender" | "amber";
 
 const tones: Record<Tone, { bg: string; chip: string; text: string }> = {
-  green:    { bg: "bg-[#EAF7F1]", chip: "bg-accent text-accent-foreground", text: "text-accent" },
+  green: { bg: "bg-[#EAF7F1]", chip: "bg-accent text-accent-foreground", text: "text-accent" },
   lavender: { bg: "bg-[#F3EEFF]", chip: "bg-[#6D5AE6] text-white", text: "text-[#6D5AE6]" },
-  amber:    { bg: "bg-[#FFF7E8]", chip: "bg-[#D97706] text-white", text: "text-[#D97706]" },
+  amber: { bg: "bg-[#FFF7E8]", chip: "bg-[#D97706] text-white", text: "text-[#D97706]" },
 };
 
 export function ProductCards() {
   return (
     <div className="grid gap-6 lg:grid-cols-3">
       <ProductCard
-        tone="green"
-        eyebrow="Check"
-        title="Taxexa Check"
-        to="/products/check"
-        icon={<ShieldCheck className="h-5 w-5" />}
-        desc="Automatically validate VAT numbers, invoices and transaction data before filing."
-        preview={<CheckPreview />}
-      />
-      <ProductCard
         tone="lavender"
-        eyebrow="Rules"
+        eyebrow="01 · Determine"
         title="Taxexa Rules"
         to="/products/rules"
         icon={<Globe2 className="h-5 w-5" />}
-        desc="Apply country-specific VAT regulations automatically across every transaction."
+        desc="Identify the VAT treatment, authority source and effective rule behind each scenario."
         preview={<RulesPreview />}
       />
       <ProductCard
+        tone="green"
+        eyebrow="02 · Check"
+        title="Taxexa Check"
+        to="/products/check"
+        icon={<ShieldCheck className="h-5 w-5" />}
+        desc="Validate VAT IDs, invoice fields and transaction facts before the invoice moves."
+        preview={<CheckPreview />}
+      />
+      <ProductCard
         tone="amber"
-        eyebrow="Evidence"
+        eyebrow="03 · Prove"
         title="Taxexa Evidence"
         to="/products/evidence"
         icon={<FolderCheck className="h-5 w-5" />}
-        desc="Automatically collect, organise and export compliance evidence for every transaction."
+        desc="Connect every conclusion to the documents, timestamps and reviews that support it."
         preview={<EvidencePreview />}
       />
     </div>
@@ -46,10 +46,21 @@ export function ProductCards() {
 }
 
 function ProductCard({
-  tone, eyebrow, title, desc, icon, preview, to,
+  tone,
+  eyebrow,
+  title,
+  desc,
+  icon,
+  preview,
+  to,
 }: {
-  tone: Tone; eyebrow: string; title: string; desc: string;
-  icon: React.ReactNode; preview: React.ReactNode; to: string;
+  tone: Tone;
+  eyebrow: string;
+  title: string;
+  desc: string;
+  icon: React.ReactNode;
+  preview: React.ReactNode;
+  to: string;
 }) {
   const t = tones[tone];
   return (
@@ -58,10 +69,14 @@ function ProductCard({
       className={`group relative overflow-hidden rounded-2xl border border-border ${t.bg} p-7 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.18)]`}
     >
       <div className="flex items-center gap-2">
-        <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${t.chip}`}>
+        <span
+          className={`inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${t.chip}`}
+        >
           {eyebrow}
         </span>
-        <div className={`ml-auto h-9 w-9 rounded-lg bg-white/70 backdrop-blur ${t.text} flex items-center justify-center`}>
+        <div
+          className={`ml-auto h-9 w-9 rounded-lg bg-white/70 backdrop-blur ${t.text} flex items-center justify-center`}
+        >
           {icon}
         </div>
       </div>
@@ -75,7 +90,7 @@ function ProductCard({
       </div>
 
       <div className="mt-6 min-h-[24px]">
-        <span className={`inline-flex items-center gap-1.5 text-sm font-medium ${t.text} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+        <span className={`inline-flex items-center gap-1.5 text-sm font-medium ${t.text}`}>
           Explore Product <ArrowRight className="h-4 w-4" />
         </span>
       </div>
@@ -115,21 +130,25 @@ function CheckPreview() {
 
 function RulesPreview() {
   return (
-    <div className="grid grid-cols-2 gap-3 items-center">
-      <div className="h-24 text-[#6D5AE6]"><EuropeMap className="h-full w-full" /></div>
+    <div className="grid grid-cols-2 items-center gap-3">
+      <div className="h-24 text-[#6D5AE6]">
+        <EuropeMap className="h-full w-full" />
+      </div>
       <div className="space-y-1.5">
-        {["DE · 19%", "FR · 20%", "PL · 23%", "IT · 22%"].map((r, i) => (
-          <motion.div
-            key={r}
-            initial={{ opacity: 0, x: 6 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
-            className="text-[11px] px-2 py-1 rounded bg-white/70 text-primary font-medium"
-          >
-            {r}
-          </motion.div>
-        ))}
+        {["Supply · B2B goods", "Route · PL → DE", "Treatment · 0%", "Source · Art. 138"].map(
+          (r, i) => (
+            <motion.div
+              key={r}
+              initial={{ opacity: 0, x: 6 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="text-[11px] px-2 py-1 rounded bg-white/70 text-primary font-medium"
+            >
+              {r}
+            </motion.div>
+          ),
+        )}
       </div>
     </div>
   );
@@ -137,8 +156,10 @@ function RulesPreview() {
 
 function EvidencePreview() {
   const items = [
-    { l: "Invoices", n: 128 }, { l: "Receipts", n: 342 },
-    { l: "Contracts", n: 46 }, { l: "Attachments", n: 87 },
+    { l: "Invoices", n: 128 },
+    { l: "Receipts", n: 342 },
+    { l: "Contracts", n: 46 },
+    { l: "Attachments", n: 87 },
   ];
   return (
     <div className="space-y-2">

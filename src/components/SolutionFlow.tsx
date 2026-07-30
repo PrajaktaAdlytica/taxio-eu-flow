@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import { FileText, ShieldCheck, Globe2, FolderCheck, BadgeCheck } from "lucide-react";
+import { BadgeCheck, FileText, FolderCheck, Scale, ShieldCheck } from "lucide-react";
 
 const nodes = [
-  { icon: FileText, label: "Invoice" },
-  { icon: ShieldCheck, label: "Validation Engine" },
-  { icon: Globe2, label: "VAT Rules" },
-  { icon: FolderCheck, label: "Evidence" },
-  { icon: BadgeCheck, label: "Ready to File" },
+  { icon: FileText, label: "Transaction inputs" },
+  { icon: Scale, label: "Determine treatment" },
+  { icon: ShieldCheck, label: "Check the invoice" },
+  { icon: FolderCheck, label: "Prove the decision" },
+  { icon: BadgeCheck, label: "Review complete" },
 ];
 
 export function SolutionFlow() {
@@ -21,13 +21,15 @@ export function SolutionFlow() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.5 }}
-              className="surface-card w-full p-5 flex flex-col items-center text-center relative z-10"
+              className="surface-card card-hover w-full p-5 flex flex-col items-center text-center relative z-10"
             >
               <motion.div
                 animate={{ scale: [1, 1.06, 1] }}
                 transition={{ duration: 2.2, delay: i * 0.3, repeat: Infinity, ease: "easeInOut" }}
                 className={`h-12 w-12 rounded-xl flex items-center justify-center ${
-                  i === nodes.length - 1 ? "bg-accent text-accent-foreground" : "bg-accent-soft text-accent"
+                  i === nodes.length - 1
+                    ? "bg-accent text-accent-foreground"
+                    : "bg-accent-soft text-accent"
                 }`}
               >
                 <n.icon className="h-5 w-5" />

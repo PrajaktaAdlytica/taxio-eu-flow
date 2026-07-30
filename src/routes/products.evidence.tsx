@@ -4,17 +4,39 @@ import { SectionHeader, Eyebrow } from "@/components/SectionHeader";
 import { ButtonLink } from "@/components/Button";
 import { ArrowRight, Check, FolderCheck } from "lucide-react";
 import { CTA } from "@/components/CTA";
+import { ProductProof } from "@/components/ProductProof";
 
 export const Route = createFileRoute("/products/evidence")({
-  head: () => ({ meta: [{ title: "Taxexa Evidence — Compliance evidence, automated" }] }),
+  head: () => ({
+    meta: [
+      { title: "Taxexa Evidence — Connected transaction proof" },
+      {
+        name: "description",
+        content:
+          "Explore the fictional Taxexa Evidence workflow for connected documents, visible gaps and portable transaction context.",
+      },
+    ],
+  }),
   component: Page,
 });
 
 const features = [
-  { t: "Automatic collection", d: "Receipts, contracts and supporting documents automatically attached to the right transactions." },
-  { t: "Audit-ready packages", d: "Export a fully documented evidence pack for any period or transaction in a click." },
-  { t: "Version history", d: "Every file, every change tracked with immutable timestamps and user attribution." },
-  { t: "Secure by default", d: "EU-hosted storage, granular permissions and full GDPR alignment." },
+  {
+    t: "Connected collection",
+    d: "A concept for attaching receipts, contracts and transport documents to the decision they support.",
+  },
+  {
+    t: "Audit-ready packages",
+    d: "Export a fully documented evidence pack for any period or transaction in a click.",
+  },
+  {
+    t: "Version history",
+    d: "Illustrative reviewer, timestamp and change history keeps the evidence trail understandable.",
+  },
+  {
+    t: "Portable by design",
+    d: "The concept prioritises structured, exportable transaction files over a closed document archive.",
+  },
 ];
 
 function Page() {
@@ -24,14 +46,20 @@ function Page() {
         <div className="max-w-3xl">
           <Eyebrow>Taxexa Evidence</Eyebrow>
           <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
-            Every document, connected to <span className="font-editorial text-accent">every transaction.</span>
+            Every document, connected to{" "}
+            <span className="font-editorial text-accent">every transaction.</span>
           </h1>
           <p className="mt-6 text-[17px] text-muted-foreground leading-relaxed">
-            Automatically collect, organise and export compliance evidence for every transaction — audit-ready, always.
+            Explore how documents, validation receipts and reviewer actions could remain connected
+            to the VAT conclusion they support.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink to="/request-demo" variant="primary" size="lg">Request Demo <ArrowRight className="h-4 w-4" /></ButtonLink>
-            <ButtonLink to="/" variant="outline" size="lg">Back to platform</ButtonLink>
+            <ButtonLink to="/request-demo" variant="primary" size="lg">
+              Request concept demo <ArrowRight className="h-4 w-4" />
+            </ButtonLink>
+            <ButtonLink href="/#workspace" variant="outline" size="lg">
+              Explore the workspace
+            </ButtonLink>
           </div>
         </div>
       </section>
@@ -45,8 +73,19 @@ function Page() {
             <div className="text-sm font-semibold">Evidence Vault</div>
           </div>
           <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-5">
-            {["Invoices", "Receipts", "Contracts", "Attachments", "Export Package"].map((t) => (
-              <div key={t} className="rounded-xl bg-white border border-border px-4 py-3 text-sm text-primary">{t}</div>
+            {[
+              "Invoice · Received",
+              "VIES receipt · Stored",
+              "CMR · Received",
+              "Destination proof · Missing",
+              "Evidence pack · 75%",
+            ].map((t) => (
+              <div
+                key={t}
+                className="state-hover rounded-xl bg-white border border-border px-4 py-3 text-sm text-primary"
+              >
+                {t}
+              </div>
             ))}
           </div>
         </div>
@@ -70,6 +109,8 @@ function Page() {
           ))}
         </div>
       </section>
+
+      <ProductProof kind="evidence" />
 
       <CTA />
     </Shell>

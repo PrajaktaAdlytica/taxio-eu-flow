@@ -7,7 +7,11 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Taxexa" },
-      { name: "description", content: "Taxexa builds premium European infrastructure for VAT compliance, e-invoicing and evidence management." },
+      {
+        name: "description",
+        content:
+          "Taxexa is an interactive European SaaS concept for explainable VAT decisions, invoice checks and supporting evidence.",
+      },
     ],
   }),
   component: About,
@@ -20,10 +24,13 @@ function About() {
         <div className="max-w-3xl">
           <Eyebrow>About Taxexa</Eyebrow>
           <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
-            Building European infrastructure for <span className="font-editorial text-accent">tax compliance.</span>
+            Building European infrastructure for{" "}
+            <span className="font-editorial text-accent">tax compliance.</span>
           </h1>
           <p className="mt-6 text-[17px] text-muted-foreground leading-relaxed">
-            Taxexa is a European B2B SaaS platform helping SMEs, accountants, finance teams and cross-border sellers automate VAT compliance, e-invoicing and evidence management — from one operational workspace.
+            Taxexa is an interactive European B2B SaaS concept exploring how SMEs, accountants,
+            finance teams and cross-border sellers could connect VAT decisions, invoice checks and
+            supporting evidence in one operational workspace.
           </p>
         </div>
       </section>
@@ -31,9 +38,18 @@ function About() {
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            { t: "Made in Europe", d: "Built in Warsaw for the European market — hosted in the EU, compliant with GDPR from day one." },
-            { t: "Tax content team", d: "In-house tax specialists monitor all 27 EU member states, so your workflows always reflect current rules." },
-            { t: "Operational focus", d: "We design software that finance teams actually enjoy using — calm, fast, and never in the way." },
+            {
+              t: "European by design",
+              d: "The concept is grounded in the fragmented country rules, invoice mandates and evidence needs European teams face.",
+            },
+            {
+              t: "Explainability first",
+              d: "Every imagined product result keeps its inputs, source, effective date and review state visible.",
+            },
+            {
+              t: "Operational focus",
+              d: "The interface is designed to feel calm, precise and useful during real finance-team review work.",
+            },
           ].map((v) => (
             <div key={v.t} className="surface-card card-hover p-6">
               <div className="text-sm font-semibold text-primary">{v.t}</div>
@@ -44,11 +60,18 @@ function About() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16">
-        <SectionHeader eyebrow="Contact" title="Come and say hello." description="Taxexa Sp. z o.o. · Rondo Daszyńskiego 2B · 00-843 Warsaw · Poland" />
+        <SectionHeader
+          eyebrow="Concept contact"
+          title="A transparent contact surface for the concept."
+          description="Taxexa.com is reserved for the concept. The email link below is illustrative and may not be monitored."
+        />
         <div className="mt-8 text-center text-sm text-muted-foreground">
-          <a href="mailto:hello@taxexa.com" className="text-accent hover:text-accent/80 font-medium">hello@taxexa.com</a>
-          {" · "}
-          <a href="tel:+48223078420" className="text-accent hover:text-accent/80 font-medium">+48 22 307 84 20</a>
+          <a
+            href="mailto:hello@taxexa.com"
+            className="text-accent hover:text-accent/80 font-medium"
+          >
+            hello@taxexa.com
+          </a>
         </div>
       </section>
 

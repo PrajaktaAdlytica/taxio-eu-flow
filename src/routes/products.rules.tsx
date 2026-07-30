@@ -4,17 +4,39 @@ import { SectionHeader, Eyebrow } from "@/components/SectionHeader";
 import { ButtonLink } from "@/components/Button";
 import { ArrowRight, Check, Scale } from "lucide-react";
 import { CTA } from "@/components/CTA";
+import { ProductProof } from "@/components/ProductProof";
 
 export const Route = createFileRoute("/products/rules")({
-  head: () => ({ meta: [{ title: "Taxexa Rules — Country-specific VAT automation" }] }),
+  head: () => ({
+    meta: [
+      { title: "Taxexa Rules — Explainable European VAT decisions" },
+      {
+        name: "description",
+        content:
+          "Explore the fictional Taxexa Rules workflow for effective-dated European VAT treatment and reviewable decision logic.",
+      },
+    ],
+  }),
   component: Page,
 });
 
 const features = [
-  { t: "27 EU countries", d: "Live coverage of every EU member state, updated continuously by our tax content team." },
-  { t: "Reverse charge & OSS/IOSS", d: "Cross-border scenarios handled automatically, no manual VAT logic to maintain." },
-  { t: "Deterministic engine", d: "Every rule decision explainable and auditable — no black boxes." },
-  { t: "API-first", d: "Plug Taxexa Rules into your ERP, billing or e-commerce stack in minutes." },
+  {
+    t: "Country and scenario coverage",
+    d: "A concept for effective-dated treatment across supported European transaction types.",
+  },
+  {
+    t: "Reverse charge & OSS/IOSS",
+    d: "Illustrative decision paths show how cross-border facts could route to different treatments.",
+  },
+  {
+    t: "Deterministic engine",
+    d: "Every rule decision explainable and auditable — no black boxes.",
+  },
+  {
+    t: "Integration-ready concept",
+    d: "The imagined API surface connects rule decisions to ERP, billing and e-commerce workflows.",
+  },
 ];
 
 function Page() {
@@ -24,14 +46,20 @@ function Page() {
         <div className="max-w-3xl">
           <Eyebrow>Taxexa Rules</Eyebrow>
           <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
-            Country-specific VAT logic, <span className="font-editorial text-accent">automated.</span>
+            Country-specific VAT logic,{" "}
+            <span className="font-editorial text-accent">automated.</span>
           </h1>
           <p className="mt-6 text-[17px] text-muted-foreground leading-relaxed">
-            Apply the right VAT treatment across every transaction, in every country you sell into — without maintaining custom logic yourself.
+            Explore how transaction facts could resolve into an explainable VAT treatment—with the
+            authority source, effective date and review state kept beside the answer.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink to="/request-demo" variant="primary" size="lg">Request Demo <ArrowRight className="h-4 w-4" /></ButtonLink>
-            <ButtonLink to="/" variant="outline" size="lg">Back to platform</ButtonLink>
+            <ButtonLink to="/request-demo" variant="primary" size="lg">
+              Request concept demo <ArrowRight className="h-4 w-4" />
+            </ButtonLink>
+            <ButtonLink href="/#workspace" variant="outline" size="lg">
+              Explore the workspace
+            </ButtonLink>
           </div>
         </div>
       </section>
@@ -45,8 +73,18 @@ function Page() {
             <div className="text-sm font-semibold">Rule Engine</div>
           </div>
           <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-            {["Europe map", "Country selector", "Rule engine", "Compliance status"].map((t) => (
-              <div key={t} className="rounded-xl bg-white border border-border px-4 py-3 text-sm text-primary">{t}</div>
+            {[
+              "Seller · Poland",
+              "Customer · Germany",
+              "Treatment · 0%",
+              "Source · Article 138",
+            ].map((t) => (
+              <div
+                key={t}
+                className="state-hover rounded-xl bg-white border border-border px-4 py-3 text-sm text-primary"
+              >
+                {t}
+              </div>
             ))}
           </div>
         </div>
@@ -70,6 +108,8 @@ function Page() {
           ))}
         </div>
       </section>
+
+      <ProductProof kind="rules" />
 
       <CTA />
     </Shell>

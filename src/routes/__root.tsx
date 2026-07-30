@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { MotionConfig } from "motion/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -45,15 +46,23 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-dotted px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-primary">This page didn't load</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Something went wrong. You can try refreshing or head home.</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Something went wrong. You can try refreshing or head home.
+        </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:bg-accent/90"
           >
             Try again
           </button>
-          <a href="/" className="inline-flex items-center justify-center rounded-lg border border-border bg-surface px-5 py-2.5 text-sm font-medium text-primary hover:bg-secondary">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center rounded-lg border border-border bg-surface px-5 py-2.5 text-sm font-medium text-primary hover:bg-secondary"
+          >
             Go home
           </a>
         </div>
@@ -62,8 +71,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const TITLE = "Taxexa — Automate VAT compliance across Europe.";
-const DESC = "Taxexa helps EU SMEs, accountants, finance teams and cross-border sellers automate VAT compliance, e-invoicing and evidence management in one operational workspace.";
+const TITLE = "Taxexa — EU invoice compliance you can explain";
+const DESC =
+  "An interactive product concept for determining VAT treatment, validating invoices and preserving the evidence behind European compliance decisions.";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -77,17 +87,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Taxexa" },
+      { property: "og:url", content: "https://taxexa.com" },
+      { property: "og:image", content: "https://taxexa.com/og-taxexa.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Taxexa — determine, check and prove European invoice decisions",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { title: "Taxexa — Automate VAT compliance across Europe." },
-      { property: "og:title", content: "Taxexa — Automate VAT compliance across Europe." },
-      { name: "twitter:title", content: "Taxexa — Automate VAT compliance across Europe." },
-      { name: "description", content: "Validate invoices, apply country-specific VAT rules and automate evidence collection from one operational workspace." },
-      { property: "og:description", content: "Validate invoices, apply country-specific VAT rules and automate evidence collection from one operational workspace." },
-      { name: "twitter:description", content: "Validate invoices, apply country-specific VAT rules and automate evidence collection from one operational workspace." },
-      { property: "og:image", content: "https://taxexa.com/taxexa-favicon.svg?v=taxexa" },
-      { name: "twitter:image", content: "https://taxexa.com/taxexa-favicon.svg?v=taxexa" },
+      { name: "twitter:image", content: "https://taxexa.com/og-taxexa.png" },
+      { name: "theme-color", content: "#0B3B2E" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -125,7 +137,9 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <MotionConfig reducedMotion="user">
+        <Outlet />
+      </MotionConfig>
     </QueryClientProvider>
   );
 }

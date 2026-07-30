@@ -5,18 +5,29 @@ import { EuropeMap } from "./EuropeMap";
 export function ProblemCards() {
   return (
     <div className="grid gap-6 md:grid-cols-3">
-      <Card title="Cross-border VAT" icon={<Globe2 className="h-5 w-5" />}
-        desc="Different countries require different VAT treatments, creating uncertainty during every transaction.">
-        <div className="h-32 w-full text-accent"><EuropeMap className="h-full w-full" /></div>
+      <Card
+        title="Cross-border VAT"
+        icon={<Globe2 className="h-5 w-5" />}
+        desc="Different countries require different VAT treatments, creating uncertainty during every transaction."
+      >
+        <div className="h-32 w-full text-accent">
+          <EuropeMap className="h-full w-full" />
+        </div>
       </Card>
 
-      <Card title="E-Invoicing" icon={<FileCheck2 className="h-5 w-5" />}
-        desc="Invoices move through multiple systems before becoming compliant.">
+      <Card
+        title="E-Invoicing"
+        icon={<FileCheck2 className="h-5 w-5" />}
+        desc="Invoices move through multiple systems before becoming compliant."
+      >
         <InvoiceMini />
       </Card>
 
-      <Card title="Missing Evidence" icon={<FolderArchive className="h-5 w-5" />}
-        desc="Receipts, contracts and supporting documents become disconnected from the original transaction.">
+      <Card
+        title="Missing Evidence"
+        icon={<FolderArchive className="h-5 w-5" />}
+        desc="Receipts, contracts and supporting documents become disconnected from the original transaction."
+      >
         <StackingFiles />
       </Card>
     </div>
@@ -24,8 +35,16 @@ export function ProblemCards() {
 }
 
 function Card({
-  title, icon, desc, children,
-}: { title: string; icon: React.ReactNode; desc: string; children: React.ReactNode }) {
+  title,
+  icon,
+  desc,
+  children,
+}: {
+  title: string;
+  icon: React.ReactNode;
+  desc: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="group surface-card card-hover p-6 flex flex-col">
       <div className="h-10 w-10 rounded-lg bg-accent-soft text-accent flex items-center justify-center">
@@ -33,7 +52,7 @@ function Card({
       </div>
       <h3 className="mt-4 text-lg font-semibold text-primary">{title}</h3>
       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
-      <div className="mt-5 rounded-xl border border-border bg-background/60 p-4 flex-1 flex items-center justify-center min-h-[140px] overflow-hidden">
+      <div className="state-hover mt-5 rounded-xl border border-border bg-background/60 p-4 flex-1 flex items-center justify-center min-h-[140px] overflow-hidden">
         {children}
       </div>
     </div>

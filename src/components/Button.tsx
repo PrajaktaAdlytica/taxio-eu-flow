@@ -14,8 +14,7 @@ export const buttonStyles = cva(
         outline:
           "border border-border bg-surface text-primary hover:border-primary/40 hover:bg-secondary",
         ghost: "text-primary hover:bg-secondary",
-        link:
-          "text-accent hover:text-accent/80 underline-offset-4 hover:underline px-0",
+        link: "text-accent hover:text-accent/80 underline-offset-4 hover:underline px-0",
       },
       size: {
         sm: "h-9 px-3.5",
