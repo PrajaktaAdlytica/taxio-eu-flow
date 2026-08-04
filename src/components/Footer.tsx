@@ -12,11 +12,21 @@ const cols = [
     ],
   },
   {
-    title: "Solutions",
+    title: "Company",
     links: [
-      { label: "Solutions", href: "/#solutions" },
-      { label: "Pricing", href: "/#pricing" },
       { label: "About", to: "/about" },
+      { label: "Funding announcement", to: "/news/funding-announcement" },
+      {
+        label: "Dlabs portfolio",
+        href: "https://d-labs-site.vercel.app/companies",
+        external: true,
+      },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/taxexa/", external: true },
+      {
+        label: "Crunchbase",
+        href: "https://www.crunchbase.com/organization/taxexa",
+        external: true,
+      },
     ],
   },
   {
@@ -77,6 +87,8 @@ export function Footer() {
                     <li key={l.label}>
                       <a
                         href={l.href}
+                        target={"external" in l && l.external ? "_blank" : undefined}
+                        rel={"external" in l && l.external ? "noreferrer noopener" : undefined}
                         className="text-primary/80 hover:text-accent transition-colors"
                       >
                         {l.label}
@@ -93,7 +105,7 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-14 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <div>© 2026 Taxexa concept — taxexa.com</div>
+          <div>© 2025 Taxexa — taxexa.com</div>
           <div>Designed for European finance operations</div>
         </div>
         <p className="mt-4 text-center text-[10px] leading-relaxed text-muted-foreground/75">

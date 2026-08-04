@@ -234,7 +234,7 @@ function RulesVisual({ reducedMotion }: { reducedMotion: boolean }) {
           EU VAT Directive · Article 138
           <span className="ml-auto flex items-center gap-1">
             <Clock3 className="h-3 w-3" aria-hidden="true" />
-            Effective 30 Jul 2026 · illustrative
+            Effective 8 Oct 2025 · illustrative
           </span>
         </div>
       </motion.div>
@@ -259,7 +259,7 @@ function CheckVisual({ reducedMotion }: { reducedMotion: boolean }) {
                 <FileText className="h-3.5 w-3.5" aria-hidden="true" />
               </span>
               <div>
-                <div className="text-[9px] font-semibold">INV-2026-0421</div>
+                <div className="text-[9px] font-semibold">INV-2025-0421</div>
                 <div className="text-[7px] text-muted-foreground">Vistula Home Sp. z o.o.</div>
               </div>
             </div>
@@ -374,7 +374,7 @@ function EvidenceVisual({ reducedMotion }: { reducedMotion: boolean }) {
           {[
             {
               label: "Commercial invoice",
-              detail: "INV-2026-0421",
+              detail: "INV-2025-0421",
               icon: FileText,
               y: 0,
               rotate: -1.4,

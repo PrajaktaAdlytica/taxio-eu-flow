@@ -14,7 +14,7 @@ const badge: Record<Status, string> = {
 
 const rows = [
   {
-    inv: "INV-2026-0421",
+    inv: "INV-2025-0421",
     vendor: "Baltic Retail Sp. z o.o.",
     country: "PL",
     amount: "€ 4,820.00",
@@ -23,7 +23,7 @@ const rows = [
     st: "valid",
   },
   {
-    inv: "INV-2026-0422",
+    inv: "INV-2025-0422",
     vendor: "Nordic Supply GmbH",
     country: "DE",
     amount: "€ 2,140.00",
@@ -32,7 +32,7 @@ const rows = [
     st: "filed",
   },
   {
-    inv: "INV-2026-0423",
+    inv: "INV-2025-0423",
     vendor: "Loire Marketplace SAS",
     country: "FR",
     amount: "€ 1,340.00",
@@ -41,7 +41,7 @@ const rows = [
     st: "review",
   },
   {
-    inv: "INV-2026-0424",
+    inv: "INV-2025-0424",
     vendor: "Milano Trade S.r.l.",
     country: "IT",
     amount: "€ 3,905.00",
@@ -50,7 +50,7 @@ const rows = [
     st: "valid",
   },
   {
-    inv: "INV-2026-0425",
+    inv: "INV-2025-0425",
     vendor: "Iberia Logistics S.L.",
     country: "ES",
     amount: "€    980.00",

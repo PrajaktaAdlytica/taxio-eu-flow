@@ -97,6 +97,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
           </div>
           <NavAnchor href="/#workspace">Product tour</NavAnchor>
           <NavAnchor href="/#pricing">Pricing</NavAnchor>
+          <NavLink to="/news/funding-announcement">Announcement</NavLink>
           <NavLink to="/about">About</NavLink>
         </div>
 
@@ -155,6 +156,9 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
             </a>
             <MobileLink to="/about" onClick={() => setOpen(false)}>
               About
+            </MobileLink>
+            <MobileLink to="/news/funding-announcement" onClick={() => setOpen(false)}>
+              Announcement
             </MobileLink>
             <div className="pt-3 flex gap-2">
               <ButtonLink to="/signin" variant="outline" size="sm" className="flex-1">

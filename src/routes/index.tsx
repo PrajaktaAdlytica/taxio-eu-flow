@@ -19,6 +19,7 @@ import { ProductWorkspace } from "@/components/ProductWorkspace";
 import { CustomerJourney } from "@/components/CustomerJourney";
 import { TrustByDesign } from "@/components/TrustByDesign";
 import { CinematicEntry } from "@/components/CinematicEntry";
+import { FundingAnnouncement } from "@/components/FundingAnnouncement";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -249,6 +250,8 @@ function Home() {
           />
         </div>
       </section>
+
+      <FundingAnnouncement />
 
       <CTA />
     </Shell>

@@ -74,6 +74,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const TITLE = "Taxexa — EU invoice compliance you can explain";
 const DESC =
   "An interactive product concept for determining VAT treatment, validating invoices and preserving the evidence behind European compliance decisions.";
+const ORGANIZATION_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Taxexa",
+  url: "https://taxexa.com",
+  sameAs: [
+    "https://www.linkedin.com/company/taxexa/",
+    "https://www.crunchbase.com/organization/taxexa",
+  ],
+});
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -124,6 +134,10 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: ORGANIZATION_SCHEMA }}
+        />
       </head>
       <body>
         {children}

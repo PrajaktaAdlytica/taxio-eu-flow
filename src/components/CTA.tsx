@@ -36,9 +36,9 @@ export function CTA() {
 
 function MiniPreview() {
   const items = [
-    { l: "INV-2026-0421 · Baltic Retail", ok: true },
-    { l: "INV-2026-0422 · Nordic Supply", ok: true },
-    { l: "INV-2026-0423 · Loire Marketplace", ok: false },
+    { l: "INV-2025-0421 · Baltic Retail", ok: true },
+    { l: "INV-2025-0422 · Nordic Supply", ok: true },
+    { l: "INV-2025-0423 · Loire Marketplace", ok: false },
   ];
   return (
     <div className="surface-card p-4 space-y-2">

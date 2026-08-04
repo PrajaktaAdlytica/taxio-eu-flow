@@ -40,8 +40,8 @@ const content: Record<
     ],
     freshness: [
       ["Jurisdiction", "EU · Poland"],
-      ["Effective", "Illustrative · 1 Jan 2026"],
-      ["Reviewed", "Illustrative · 24 Jul 2026"],
+      ["Effective", "Illustrative · 8 Oct 2025"],
+      ["Reviewed", "Illustrative · 8 Oct 2025"],
       ["State", "Human review required"],
     ],
     capabilities: [
@@ -58,9 +58,9 @@ const content: Record<
     description:
       "Taxexa Check is designed to separate format checks, official-source responses and business-rule warnings instead of collapsing everything into one green badge.",
     inputs: [
-      ["Invoice", "INV-2026-0421"],
+      ["Invoice", "INV-2025-0421"],
       ["VAT ID", "DE123456789"],
-      ["Tax point", "30 Jul 2026"],
+      ["Tax point", "8 Oct 2025"],
       ["Currency", "EUR"],
     ],
     result: "Invoice valid · evidence incomplete",
@@ -74,7 +74,7 @@ const content: Record<
     ],
     freshness: [
       ["Jurisdiction", "Poland · Germany"],
-      ["Checked", "Illustrative · 30 Jul 2026"],
+      ["Checked", "Illustrative · 8 Oct 2025"],
       ["Source state", "Mock response stored"],
       ["Confidence", "High · review open"],
     ],
@@ -113,7 +113,7 @@ const content: Record<
     ],
     freshness: [
       ["Policy", "Illustrative · v3.2"],
-      ["Reviewed", "Illustrative · 24 Jul 2026"],
+      ["Reviewed", "Illustrative · 8 Oct 2025"],
       ["Documents", "3 stored · 1 missing"],
       ["State", "Follow-up required"],
     ],

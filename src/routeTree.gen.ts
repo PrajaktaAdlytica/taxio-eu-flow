@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as RequestDemoRouteImport } from './routes/request-demo'
 import { Route as SigninRouteImport } from './routes/signin'
+import { Route as NewsFundingAnnouncementRouteImport } from './routes/news.funding-announcement'
 import { Route as ProductsCheckRouteImport } from './routes/products.check'
 import { Route as ProductsEvidenceRouteImport } from './routes/products.evidence'
 import { Route as ProductsRulesRouteImport } from './routes/products.rules'
@@ -37,6 +38,11 @@ const SigninRoute = SigninRouteImport.update({
   path: '/signin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsFundingAnnouncementRoute = NewsFundingAnnouncementRouteImport.update({
+  id: '/news/funding-announcement',
+  path: '/news/funding-announcement',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsCheckRoute = ProductsCheckRouteImport.update({
   id: '/products/check',
   path: '/products/check',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/request-demo': typeof RequestDemoRoute
   '/signin': typeof SigninRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/check': typeof ProductsCheckRoute
   '/products/evidence': typeof ProductsEvidenceRoute
   '/products/rules': typeof ProductsRulesRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/request-demo': typeof RequestDemoRoute
   '/signin': typeof SigninRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/check': typeof ProductsCheckRoute
   '/products/evidence': typeof ProductsEvidenceRoute
   '/products/rules': typeof ProductsRulesRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/request-demo': typeof RequestDemoRoute
   '/signin': typeof SigninRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/check': typeof ProductsCheckRoute
   '/products/evidence': typeof ProductsEvidenceRoute
   '/products/rules': typeof ProductsRulesRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/request-demo'
     | '/signin'
+    | '/news/funding-announcement'
     | '/products/check'
     | '/products/evidence'
     | '/products/rules'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/request-demo'
     | '/signin'
+    | '/news/funding-announcement'
     | '/products/check'
     | '/products/evidence'
     | '/products/rules'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/request-demo'
     | '/signin'
+    | '/news/funding-announcement'
     | '/products/check'
     | '/products/evidence'
     | '/products/rules'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   RequestDemoRoute: typeof RequestDemoRoute
   SigninRoute: typeof SigninRoute
+  NewsFundingAnnouncementRoute: typeof NewsFundingAnnouncementRoute
   ProductsCheckRoute: typeof ProductsCheckRoute
   ProductsEvidenceRoute: typeof ProductsEvidenceRoute
   ProductsRulesRoute: typeof ProductsRulesRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SigninRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/news/funding-announcement': {
+      id: '/news/funding-announcement'
+      path: '/news/funding-announcement'
+      fullPath: '/news/funding-announcement'
+      preLoaderRoute: typeof NewsFundingAnnouncementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/check': {
       id: '/products/check'
       path: '/products/check'
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   RequestDemoRoute: RequestDemoRoute,
   SigninRoute: SigninRoute,
+  NewsFundingAnnouncementRoute: NewsFundingAnnouncementRoute,
   ProductsCheckRoute: ProductsCheckRoute,
   ProductsEvidenceRoute: ProductsEvidenceRoute,
   ProductsRulesRoute: ProductsRulesRoute,

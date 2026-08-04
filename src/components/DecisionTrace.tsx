@@ -17,7 +17,7 @@ export function DecisionTrace() {
             <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
               Illustrative decision trace
             </div>
-            <div className="mt-1 text-sm font-semibold">INV-2026-0421 · Intra-EU supply</div>
+            <div className="mt-1 text-sm font-semibold">INV-2025-0421 · Intra-EU supply</div>
           </div>
           <div className="inline-flex w-fit items-center gap-1.5 rounded-full bg-emerald-300/10 px-3 py-1 text-[11px] font-medium text-emerald-200 ring-1 ring-inset ring-emerald-300/20">
             <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />

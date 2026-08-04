@@ -34,7 +34,7 @@ const facts = [
   ["Seller", "Vistula Home Sp. z o.o.", "PL VAT registered"],
   ["Customer", "Nordlicht Handel GmbH", "DE VAT ID · illustrative"],
   ["Supply", "Modular shelving", "B2B goods"],
-  ["Movement", "Warsaw → Berlin", "30 Jul 2026"],
+  ["Movement", "Warsaw → Berlin", "8 Oct 2025"],
 ];
 
 const checks = [
@@ -45,7 +45,7 @@ const checks = [
 ];
 
 const evidence = [
-  ["Commercial invoice", "INV-2026-0421", "Stored", FileText],
+  ["Commercial invoice", "INV-2025-0421", "Stored", FileText],
   ["VAT ID receipt", "30 Jul · 11:24 CET", "Stored", CheckCircle2],
   ["Signed CMR", "CMR-88421", "Stored", PackageCheck],
   ["Destination receipt", "Requested from buyer", "Missing", MapPin],
@@ -355,7 +355,7 @@ function SourceCard() {
         <Clock3 className="mt-0.5 h-3.5 w-3.5 text-emerald-200" aria-hidden="true" />
         <div>
           <div className="text-[9px] uppercase tracking-wider text-white/30">Effective date</div>
-          <div className="mt-1 text-[10px] text-white/68">Illustrative · 1 Jan 2026</div>
+          <div className="mt-1 text-[10px] text-white/68">Illustrative · 8 Oct 2025</div>
         </div>
       </div>
       <div className="flex items-start gap-2">

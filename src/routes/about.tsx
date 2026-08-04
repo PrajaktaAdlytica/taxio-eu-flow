@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Shell } from "@/components/Shell";
 import { SectionHeader, Eyebrow } from "@/components/SectionHeader";
 import { CTA } from "@/components/CTA";
+import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -32,6 +33,37 @@ function About() {
             finance teams and cross-border sellers could connect VAT decisions, invoice checks and
             supporting evidence in one operational workspace.
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <div className="grid gap-8 rounded-2xl border border-accent/20 bg-accent-soft p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <Eyebrow>Company record</Eyebrow>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-primary sm:text-3xl">
+              Backed by Dlabs
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Taxexa has secured $470K in funding from Dlabs. Announced Oct 8, 2025.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-medium">
+            {[
+              ["Dlabs portfolio", "https://d-labs-site.vercel.app/companies"],
+              ["LinkedIn", "https://www.linkedin.com/company/taxexa/"],
+              ["Crunchbase", "https://www.crunchbase.com/organization/taxexa"],
+            ].map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-1.5 text-accent transition-colors hover:text-accent/75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                {label} <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
