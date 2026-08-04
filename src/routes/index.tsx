@@ -84,6 +84,8 @@ function Home() {
 
       <TrustedBy />
 
+      <FundingAnnouncement />
+
       {/* PROBLEM */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <SectionHeader
@@ -250,8 +252,6 @@ function Home() {
           />
         </div>
       </section>
-
-      <FundingAnnouncement />
 
       <CTA />
     </Shell>
